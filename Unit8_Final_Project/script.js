@@ -1,6 +1,7 @@
 /*global $*/
 var i = 0;
 var x = 0;
+var ans;
 var a = [1,2,3,4,5,6,7,8,9,0];
 var b = [1,2,3,4,5,6,7,8,9,0];
 $("#one").click(function(){
@@ -95,7 +96,28 @@ $("#zero").click(function(){
 });
 $("#plus").click(function(){
     $("#mathsign").text("+");
+    ans = "+";
+});
+$("#sub").click(function(){
+    $("#mathsign").text("-");
+    ans = "-";
+});
+$("#multiply").click(function(){
+    $("#mathsign").text("*");
+    ans = "*";
+});
+$("#divide").click(function(){
+    $("#mathsign").text("/");
+    ans = "/";
 });
 $("#equals").click(function(){
-    $("p").text(x + i);
+    if(ans === "+"){
+        $("#answer").text(x + i);
+    }else if(ans === "-"){
+        $("#answer").text(x - i);
+    }else if(ans === "*"){
+        $("#answer").text(x * i);
+    }else if(ans === "/"){
+        $("#answer").text(x / i);
+    }
 });
